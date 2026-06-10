@@ -17,7 +17,7 @@ def negative_assert(first_name):
     assert user_response.json()["message"] == "Имя пользователя введено некорректно. " \
     "Имя может содержать только русские или латинские буквы, " \
     "длина должна быть не менее 2 и не более 15 символов"
-    
+
 def positive_assert(first_name):
     user_body = get_user_body(first_name)
     user_response = sender_stand_request.post_new_user(user_body)
