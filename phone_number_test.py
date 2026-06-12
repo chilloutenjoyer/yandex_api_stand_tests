@@ -90,7 +90,7 @@ def test_create_empty_param_in_number_get_error_response():
     user_body["phone"] = ""
     neg_assert_no_number(user_body)
 
-#Тест 15
+#Тест 15 
 def test_create_wrong_param_type_in_number_get_error_response():
     user_body = get_user_body_phone(12345678901)
     response = sender_stand_request.post_new_user(user_body)
