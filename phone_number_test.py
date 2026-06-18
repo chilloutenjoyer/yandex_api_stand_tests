@@ -21,14 +21,14 @@ def neg_assert(phone):
     user_response = sender_stand_request.post_new_user(user_body)
     assert user_response.status_code == 400
     assert user_response.json()["code"] == 400
-    assert user_response.json() ["message"] == "РўРµР»РµС„РѕРЅРЅС‹Р№ РЅРѕРјРµСЂ РїРѕР»СЊР·РѕРІР°С‚РµР»СЏ РІРІРµРґРµРЅ РЅРµРєРѕСЂСЂРµС‚РєРЅРѕ. " \
-    "РќРѕРјРµСЂ РјРѕР¶РµС‚ СЃРѕРґРµСЂР¶Р°С‚СЊ С‚РѕР»СЊРєРѕ С†РёС„СЂС‹ Рё Р·РЅР°Рє +"
+    assert user_response.json() ["message"] == "Телефонный номер пользователя введен некорреткно. " \
+    "Номер может содержать только цифры и знак +"
 
 def neg_assert_no_number(user_body):
     response = sender_stand_request.post_new_user(user_body)
     assert response.status_code == 400
     assert response.json()["code"] == 400
-    assert response.json()["message"] == "РќРµ РІСЃРµ РЅРµРѕР±С…РѕРґРёРјС‹Рµ РїР°СЂР°РјРµС‚СЂС‹ Р±С‹Р»Рё РїРµСЂРµРґР°РЅС‹"
+    assert response.json()["message"] == "Не все необходимые параметры были переданы"
 
 #Тест 1 
 def test_create_10_symbols_in_number__get_succes_response():
